@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AeroLover</title>
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <!-- Logo -->
+        <a class="navbar-item" href="dashboard.html">
+          <img
+            src="images/image.png"
+            alt="AeroLover Logo"
+            style="min-height: 3.8rem"
+          />
+        </a>
+
+        <!-- Mobile Burger Toggle Button -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <!-- Main Categories Dropdown -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <span class="icon">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+              <span>Categories</span>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="dashboard_aircraft.html">
+                <span class="icon">
+                  <i class="fa-solid fa-plane"></i>
+                </span>
+                <span>Aircraft</span>
+              </a>
+              <a class="navbar-item" href="dashboard_cost.html">
+                <span class="icon">
+                  <i class="fa-solid fa-leaf"></i>
+                </span>
+                <span>Sustainability</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- More Dropdown -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <span class="icon">
+                <i class="fa-solid fa-ellipsis"></i>
+              </span>
+              <span>More</span>
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="about.html">
+                <span class="icon">
+                  <i class="fa-solid fa-circle-info"></i>
+                </span>
+                <span>About</span>
+              </a>
+              <a class="navbar-item" href="jobs.html">
+                <span class="icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </span>
+                <span>Jobs</span>
+              </a>
+              <a class="navbar-item" href="dashboard_contact.html">
+                <span class="icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span>Contact</span>
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item" href="report.html">
+                <span class="icon">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </span>
+                <span>Report an issue</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <a class="navbar-item" href="my_account.html">
+            <span class="icon">
+              <i class="fa-solid fa-circle-user"></i>
+            </span>
+            <span><strong>My Account</strong></span>
+          </a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <button id="logout-btn" class="button is-danger">
+                <span class="icon">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                </span>
+                <span>Log out</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<div class="section">
+      <div class="container" style="max-width: 450px">
+        <div class="box">
+          <h1 class="title has-text-centered">
+            Contact us.
+          </h1>
+
+    <div class="field" style="padding-top: 10%;">
+    <div class="field" style="margin-left: 1%;">
+        <div class="field" style="width: 100%;">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="">
+  </div>
+</div>
+
+<div class="field">
+    <div class="field" style="width: 100%;">
+  <label class="label">Username</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input" type="text" placeholder="">
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </div>
+  <p class="help is-success"></p>
+</div>
+
+<div class="field">
+  <div class="field" style="width: 100%;">
+  <label class="label">Email</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input" type="email" placeholder="">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+  </div>
+  <p class="help is-danger"></p>
+</div>
+
+<div class="field">
+  <label class="label">Subject</label>
+  <div class="control">
+    <div class="select">
+      <select>
+        <option>Select dropdown</option>
+        <option>With options</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="field" style="width: 100%;">
+  <label class="label">Message</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Textarea"></textarea>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <label class="checkbox">
+      <input type="checkbox">
+      I agree to the <a href="#">terms and conditions</a>
+    </label>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <label class="radio">
+      <input type="radio" name="question">
+      Yes
+    </label>
+    <label class="radio">
+      <input type="radio" name="question">
+      No
+    </label>
+  </div>
+</div>
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
+</div>
+    <!-- MOBILE BURGER MENU TOGGLE SCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+
+        // Add a click event on each of them
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach((el) => {
+            el.addEventListener("click", () => {
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle("is-active");
+              if ($target) {
+                $target.classList.toggle("is-active");
+              }
+            });
+          });
+        }
+      });
+    </script>
+
+    <!-- FIREBASE AUTHENTICATION SCRIPT -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import {
+        getAuth,
+        signOut,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyChg8nk4jHsziv9PfIKwC_kbg8UM4E4-MM",
+        authDomain: "newwebsite-7486f.firebaseapp.com",
+        projectId: "newwebsite-7486f",
+        storageBucket: "newwebsite-7486f.firebasestorage.app",
+        messagingSenderId: "477829357478",
+        appId: "1:477829357478:web:b17e366956c811991db967",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const protectedContent = document.getElementById("protected-content");
+
+      // Reload if user navigates via browser back/forward buttons
+      window.addEventListener("pageshow", (event) => {
+        if (
+          event.persisted ||
+          (performance.navigation && performance.navigation.type === 2)
+        ) {
+          window.location.reload();
+        }
+      });
+
+      // Guard Route: Check if logged in
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          if (protectedContent) {
+            protectedContent.style.display = "block";
+          }
+        } else {
+          window.location.replace("sign_in.html");
+        }
+      });
+
+      // Logout handler
+      const logoutBtn = document.getElementById("logout-btn");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", async () => {
+          try {
+            await signOut(auth);
+            window.location.replace("dashboard.html");
+          } catch (err) {
+            console.error("Logout error:", err);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

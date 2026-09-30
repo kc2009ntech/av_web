@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AeroLover</title>
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <!-- Logo -->
+        <a class="navbar-item" href="index.html">
+          <img
+            src="images/image.png"
+            alt="AeroLover Logo"
+            style="max-height: 3.8rem"
+          />
+        </a>
+
+        <!-- Mobile Burger Toggle Button -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <!-- Main Categories Dropdown -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <span class="icon">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+              <span>Categories</span>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="aircraft.html">
+                <span class="icon">
+                  <i class="fa-solid fa-plane"></i>
+                </span>
+                <span>Aircraft</span>
+              </a>
+              <a class="navbar-item" href="cost.html">
+                <span class="icon">
+                  <i class="fa-solid fa-leaf"></i>
+                </span>
+                <span>Sustainability</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- More Dropdown (Fixed Tag Placement) -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <span class="icon">
+                <i class="fa-solid fa-ellipsis"></i>
+              </span>
+              <span>More</span>
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="about.html">
+                <span class="icon">
+                  <i class="fa-solid fa-circle-info"></i>
+                </span>
+                <span>About</span>
+              </a>
+              <a class="navbar-item" href="jobs.html">
+                <span class="icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </span>
+                <span>Jobs</span>
+              </a>
+              <a class="navbar-item" href="contact.html">
+                <span class="icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span>Contact</span>
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item" href="report.html">
+                <span class="icon">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </span>
+                <span>Report an issue</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="sign_up.html">
+                <span class="icon">
+                  <i class="fa-solid fa-user-plus"></i>
+                </span>
+                <span><strong>Sign up</strong></span>
+              </a>
+              <a class="button is-light" href="sign_in.html">
+                <span class="icon">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                </span>
+                <span>Log in</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Tabs Section -->
+    <div class="tabs is-centered">
+      <ul>
+        <li class="is-active">
+          <a href="cost.html">
+            <span class="icon is-small"
+              ><i class="fas fa-coins" aria-hidden="true"></i
+            ></span>
+            <span>Cost</span>
+          </a>
+        </li>
+        <li>
+          <a href="fuel.html">
+            <span class="icon is-small"
+              ><i class="fas fa-droplet" aria-hidden="true"></i
+            ></span>
+            <span>Fuel</span>
+          </a>
+        </li>
+        <li>
+          <a href="emissions.html">
+            <span class="icon is-small"
+              ><i class="fas fa-seedling" aria-hidden="true"></i
+            ></span>
+            <span>Emissions</span>
+          </a>
+        </li>
+        <li>
+          <a href="operation.html">
+            <span class="icon is-small"
+              ><i class="far fa-file-alt" aria-hidden="true"></i
+            ></span>
+            <span>Operation</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mobile Burger Menu Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Mobile Burger Menu Toggle
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+        $navbarBurgers.forEach((el) => {
+          el.addEventListener("click", () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle("is-active");
+            if ($target) {
+              $target.classList.toggle("is-active");
+            }
+          });
+        });
+
+        // 2. Tab Active State Highlighter & Instant Click Response
+        const currentPath = window.location.pathname.split("/").pop();
+        const tabItems = document.querySelectorAll(".tabs ul li");
+
+        tabItems.forEach((li) => {
+          const link = li.querySelector("a");
+          if (link) {
+            const href = link.getAttribute("href");
+
+            // Highlight based on current URL when page loads
+            if (href === currentPath) {
+              li.classList.add("is-active");
+            } else {
+              li.classList.remove("is-active");
+            }
+
+            // Instantly highlight when clicked
+            link.addEventListener("click", () => {
+              tabItems.forEach((item) => item.classList.remove("is-active"));
+              li.classList.add("is-active");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

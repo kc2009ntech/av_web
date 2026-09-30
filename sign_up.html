@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AeroLover</title>
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <!-- 👇 PUT YOUR LOGO TAG RIGHT HERE 👇 -->
+        <a class="navbar-item" href="index.html">
+          <img
+            src="images/image.png"
+            alt="AeroLover Logo"
+            style="max-height: 3.8rem"
+          />
+        </a>
+        <!-- 👆 --------------------------------- 👆 -->
+
+        <!-- Mobile Burger Toggle Button -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <!-- Main Categories Dropdown -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <span class="icon">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+              <span>Categories</span>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="aircraft.html">
+                <span class="icon">
+                  <i class="fa-solid fa-plane"></i>
+                </span>
+                <span>Aircraft</span>
+              </a>
+              <a class="navbar-item" href="cost.html">
+                <span class="icon">
+                  <i class="fa-solid fa-leaf"></i>
+                </span>
+                <span>Sustainability</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- More Dropdown -->
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              <span class="icon">
+                <i class="fa-solid fa-ellipsis"></i>
+              </span>
+              <span>More</span>
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="about.html">
+                <span class="icon">
+                  <i class="fa-solid fa-circle-info"></i>
+                </span>
+                <span>About</span>
+              </a>
+              <a class="navbar-item" href="jobs.html">
+                <span class="icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </span>
+                <span>Jobs</span>
+              </a>
+              <a class="navbar-item" href="contact.html">
+                <span class="icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span>Contact</span>
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item" href="report.html">
+                <span class="icon">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </span>
+                <span>Report an issue</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="sign_up.html">
+                <span class="icon">
+                  <i class="fa-solid fa-user-plus"></i>
+                </span>
+                <span><strong>Sign up</strong></span>
+              </a>
+              <a class="button is-light" href="sign_in.html">
+                <span class="icon">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                </span>
+                <span>Log in</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Wrap all form controls into a clean container and form -->
+    <div class="section">
+      <div class="container" style="max-width: 500px">
+        <h1 class="title">Create an Account</h1>
+
+        <form id="signup-form">
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                id="name-input"
+                placeholder="e.g Alex Smith"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input
+                class="input"
+                type="email"
+                id="email-input"
+                placeholder="e.g. alexsmith@gmail.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                id="password-input"
+                placeholder="***"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Confirm Password</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                id="confirm-password-input"
+                placeholder="***"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Phone number</label>
+            <div class="control">
+              <input
+                class="input"
+                type="tel"
+                id="phone-input"
+                placeholder="123-456-7890"
+              />
+            </div>
+          </div>
+
+          <!-- Error / Status Message Area -->
+          <p
+            id="error-message"
+            class="has-text-danger mt-3"
+            style="display: none"
+          ></p>
+
+          <div class="field mt-5">
+            <div class="control">
+              <button type="submit" class="button is-primary is-fullwidth">
+                Next
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Firebase Script -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+      // 1. Paste your Firebase project configuration here:
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyChg8nk4jHsziv9PfIKwC_kbg8UM4E4-MM",
+        authDomain: "newwebsite-7486f.firebaseapp.com",
+        projectId: "newwebsite-7486f",
+        storageBucket: "newwebsite-7486f.firebasestorage.app",
+        messagingSenderId: "477829357478",
+        appId: "1:477829357478:web:b17e366956c811991db967",
+        measurementId: "G-3J2VWZE1XJ",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // DOM Elements
+      const signupForm = document.getElementById("signup-form");
+      const emailInput = document.getElementById("email-input");
+      const passwordInput = document.getElementById("password-input");
+      const confirmPasswordInput = document.getElementById(
+        "confirm-password-input",
+      );
+      const errorMessage = document.getElementById("error-message");
+
+      // Form Submit Handler
+      signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        errorMessage.style.display = "none";
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+          errorMessage.textContent = "Passwords do not match!";
+          errorMessage.style.display = "block";
+          return;
+        }
+
+        try {
+          // Register user in Firebase
+          await createUserWithEmailAndPassword(auth, email, password);
+
+          // Redirect to next page after successful sign up
+          window.location.href = "processing_page.html";
+        } catch (error) {
+          errorMessage.textContent = error.message;
+          errorMessage.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
