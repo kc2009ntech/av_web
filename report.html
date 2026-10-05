@@ -4,21 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AeroLover - Contact Us</title>
-    <!-- Bulma CSS -->
+
+    <!-- 1. Bulma CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
     />
-    <!-- Font Awesome Icons -->
+
+    <!-- 2. Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <!-- 3. Your Custom CSS (Must be LAST) -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <!-- Logo -->
+        <!-- 👇 PUT YOUR LOGO TAG RIGHT HERE 👇 -->
         <a class="navbar-item" href="index.html">
           <img
             src="images/image.png"
@@ -26,6 +31,7 @@
             style="max-height: 3.8rem"
           />
         </a>
+        <!-- 👆 --------------------------------- 👆 -->
 
         <!-- Mobile Burger Toggle Button -->
         <a
@@ -44,64 +50,28 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <!-- Main Categories Dropdown -->
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              <span class="icon">
-                <i class="fa-solid fa-bars"></i>
-              </span>
-              <span>Categories</span>
-            </a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="aircraft.html">
-                <span class="icon">
-                  <i class="fa-solid fa-plane"></i>
-                </span>
-                <span>Aircraft</span>
+          <div class="navbar-item">
+              <a class="navbar-item" href="index.html">
+                <span>Home</span>
               </a>
-              <a class="navbar-item" href="cost.html">
-                <span class="icon">
-                  <i class="fa-solid fa-leaf"></i>
-                </span>
+              <a class="navbar-item" href="latest_news.html">
+                <span>Latest News</span>
+              </a>
+               <a class="navbar-item" href="airbus.html">
+                <span>Airbus</span>
+              </a>
+              <a class="navbar-item" href="boeing.html">
+                <span>Boeing</span>
+              </a>
+              <a class="navbar-item" href="airports.html">
+                <span>Airports</span>
+              </a>
+              <a class="navbar-item" href="sustainability.html">
                 <span>Sustainability</span>
               </a>
-            </div>
-          </div>
-
-          <!-- More Dropdown -->
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              <span class="icon">
-                <i class="fa-solid fa-ellipsis"></i>
-              </span>
-              <span>More</span>
-            </a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="about.html">
-                <span class="icon">
-                  <i class="fa-solid fa-circle-info"></i>
-                </span>
-                <span>About</span>
-              </a>
-              <a class="navbar-item" href="jobs.html">
-                <span class="icon">
-                  <i class="fa-solid fa-briefcase"></i>
-                </span>
-                <span>Jobs</span>
-              </a>
-              <a class="navbar-item" href="contact.html">
-                <span class="icon">
-                  <i class="fa-solid fa-envelope"></i>
-                </span>
-                <span>Contact</span>
-              </a>
-              <hr class="navbar-divider" />
+              
               <a class="navbar-item" href="report.html">
-                <span class="icon">
-                  <i class="fa-solid fa-triangle-exclamation"></i>
-                </span>
-                <span>Report an issue</span>
+                <span>Contact us</span>
               </a>
             </div>
           </div>

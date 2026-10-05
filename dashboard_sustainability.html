@@ -97,89 +97,32 @@
         </div>
       </div>
     </nav>
-    <!-- Main Account Settings Container -->
-    <div class="section">
-      <div class="container" style="max-width: 600px">
-        <h1 class="title">Account Settings</h1>
-        <p class="subtitle">
-          Manage your profile details and security options.
-        </p>
 
-        <!-- Profile Details Box -->
-        <div class="box">
-          <h2 class="title is-5">Profile Information</h2>
-
-          <div class="field">
-            <label class="label">Email Address</label>
-            <div class="control">
-              <input
-                id="user-email"
-                class="input"
-                type="email"
-                readonly
-                disabled
-              />
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Sign-In Method</label>
-            <div class="control">
-              <span id="provider-badge" class="tag is-medium is-info"
-                >Loading...</span
-              >
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Account Created</label>
-            <div class="control">
-              <p id="created-date" class="has-text-grey">Loading...</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Security Settings Box -->
-        <div class="box">
-          <h2 class="title is-5">Security & Password</h2>
-          <p class="has-text-grey mb-3">Update your login security settings.</p>
-
-          <div id="password-section">
-            <a href="change_password.html" class="button is-warning">
-              Change Password
-            </a>
-          </div>
-
-          <!-- Notice shown for Google Sign-In Users -->
-          <p
-            id="google-notice"
-            class="has-text-grey-light is-size-7"
-            style="display: none"
-          >
-            Password management is disabled because you signed in with Google.
-          </p>
-        </div>
+    <section class="hero is-link" style="margin-top: 3cap">
+      <div class="hero-body">
+        <p class="title">Welcome back!</p>
+        <p class="subtitle">Your personal aviation companion</p>
       </div>
+    </section>
+
+    <div id="protected-content" style="display: none; padding: 2rem">
+      <!-- Page Content Goes Here -->
     </div>
 
     <!-- MOBILE BURGER MENU TOGGLE SCRIPT -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Get all "navbar-burger" elements
         const $navbarBurgers = Array.prototype.slice.call(
           document.querySelectorAll(".navbar-burger"),
           0,
         );
 
-        // Add a click event on each of them
         if ($navbarBurgers.length > 0) {
           $navbarBurgers.forEach((el) => {
             el.addEventListener("click", () => {
-              // Get the target from the "data-target" attribute
               const target = el.dataset.target;
               const $target = document.getElementById(target);
 
-              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
               el.classList.toggle("is-active");
               if ($target) {
                 $target.classList.toggle("is-active");

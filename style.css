@@ -1,0 +1,40 @@
+.navbar {
+  background-color: #29d1bb;
+  padding: -4cap;
+}
+
+.navbar-item {
+  color: #000000;
+  font-weight: 500;
+  .icon {
+    color: #2f2f36;
+  }
+}
+
+.navbar-end {
+  .button {
+    background-color: #fffbfb;
+    color: #4a4a4a;
+    border: 1px solid #ffffff;
+  }
+  .icon {
+    color: #000000;
+  }
+}
+
+.container1 {
+  padding-right: 9%;
+  margin-top: 3%;
+  margin-right: 21%;
+  padding-left: 27%;
+}
+
+.footer1 {
+  background-color: #5b66ce;
+  margin-top: 50%;
+  padding-bottom: 3%;
+  padding: 10px;
+  .text {
+    color: rgb(255, 255, 255);
+  }
+}
