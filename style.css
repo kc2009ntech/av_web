@@ -22,19 +22,13 @@
   }
 }
 
-.container1 {
-  padding-right: 9%;
-  margin-top: 3%;
-  margin-right: 21%;
-  padding-left: 27%;
+.footer {
+  background-color: #5b66ce;
+  margin-top: 55%;
+  padding: 45px;
 }
 
-.footer1 {
-  background-color: #5b66ce;
-  margin-top: 50%;
-  padding-bottom: 3%;
-  padding: 10px;
-  .text {
-    color: rgb(255, 255, 255);
-  }
+.navbar-brand2 {
+  margin-right: 20%;
+  margin-bottom: 5%;
 }
