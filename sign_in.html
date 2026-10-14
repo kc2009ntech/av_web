@@ -140,15 +140,13 @@
               style="display: none"
             ></p>
 
-            <div class="field"></div>
-              <button
-                type="submit"
-                id="login-btn"
-                class="button is-primary is-fullwidth mt-4"
+            <button
+              type="submit"
+              id="login-btn"
+              class="button is-primary is-fullwidth mt-4"
               >
-                Forgot Password?
-              </button>
-            </div>
+              Forgot Password
+            </button>
 
             <button
               type="submit"
@@ -251,93 +249,177 @@
             <span style="font-weight: 500; color: #ffffff">Sign in with GitHub</span>
           </button>
 
+  <div class="footer">
+  <div class="content has-text-centered">
+      <div class="columns">
+        <div class="column01">
+          <a class="button is-ghost" href="index.html">
+            <img src="images/image.png" alt="AeroLover Logo" style="max-height: 5.8rem" />
+          </a>
+          <p>
+            
+          </p>
+        </div>
+        <div class="column02">
+            <div class="title is-5">About AeroLover</div>
+            <p>
+              AeroLover is a website dedicated to aviation enthusiasts, providing the latest news, information about aircraft manufacturers, airports, and sustainability in aviation.
+            </p>
+          </div>
+          <div class="column03">
+          <h3 class="title is-5">Contact Us</h3>
+          <p>Email: <a href="mailto:info@aerolover.com">info@aerolover.com</a></p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-half">
+          <p>
+            &copy; 2024 AeroLover. All rights reserved.
+          </p>
+        </div>
+        <div class="column is-half has-text-right">
+          <div class="title is-5" style="margin-top: 20%;">Follow Us</div>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <p>
+            <a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_of_service.html">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+      <p>
+        <strong>AeroLover</strong> by <a href="#">Your Name</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+      </p>
+      <p>
+        <a href="index.html">Home</a> | <a href="latest_news.html">Latest News</a> | <a href="airbus.html">Airbus</a> | <a href="boeing.html">Boeing</a> | <a href="airports.html">Airports</a> | <a href="sustainability.html">Sustainability</a> | <a href="report.html">Contact us</a>
+      </p>
+    </div>
+  </div>
+</div>
+
     <!-- Script Section -->
     <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-      import {
-        getAuth,
-        signInWithEmailAndPassword,
-        GoogleAuthProvider,
-        TwitterAuthProvider,
-        GithubAuthProvider,
-        signInWithPopup,
-      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-      
-      const firebaseConfig = {
-        apiKey: "AIzaSyChg8nk4jHsziv9PfIKwC_kbg8UM4E4-MM",
-        authDomain: "newwebsite-7486f.firebaseapp.com",
-        projectId: "newwebsite-7486f",
-        storageBucket: "newwebsite-7486f.firebasestorage.app",
-        messagingSenderId: "477829357478",
-        appId: "1:477829357478:web:b17e366956c811991db967",
-        measurementId: "G-3J2VWZE1XJ",
-      };
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+    GoogleAuthProvider,
+    TwitterAuthProvider,
+    GithubAuthProvider,
+    signInWithPopup,
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyChg8nk4jHsziv9PfIKwC_kbg8UM4E4-MM",
+    authDomain: "newwebsite-7486f.firebaseapp.com",
+    projectId: "newwebsite-7486f",
+    storageBucket: "newwebsite-7486f.firebasestorage.app",
+    messagingSenderId: "477829357478",
+    appId: "1:477829357478:web:b17e366956c811991db967",
+    measurementId: "G-3J2VWZE1XJ",
+  };
 
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      
-      const googleProvider = new GoogleAuthProvider();
-      const twitterProvider = new TwitterAuthProvider();
-      const githubProvider = new GithubAuthProvider();
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  
+  const googleProvider = new GoogleAuthProvider();
+  const twitterProvider = new TwitterAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
-      const loginForm = document.getElementById("login-form");
-      const emailInput = document.getElementById("login-email");
-      const passwordInput = document.getElementById("login-password");
-      const errorMessage = document.getElementById("error-message");
-      const loginBtn = document.getElementById("login-btn");
-      
-      const googleBtn = document.getElementById("google-btn");
-      const twitterBtn = document.getElementById("twitter-btn");
-      const githubBtn = document.getElementById("github-btn");
+  const loginForm = document.getElementById("login-form");
+  const emailInput = document.getElementById("login-email");
+  const passwordInput = document.getElementById("login-password");
+  const errorMessage = document.getElementById("error-message");
+  const loginBtn = document.getElementById("login-btn");
+  const forgotPasswordBtn = document.getElementById("forgot-password-btn");
+  
+  const googleBtn = document.getElementById("google-btn");
+  const twitterBtn = document.getElementById("twitter-btn");
+  const githubBtn = document.getElementById("github-btn");
 
-      // Popup Social Login Handler (Optimized for instant 1st-click response)
-      async function handleSocialLogin(provider, buttonElement) {
-        errorMessage.style.display = "none";
-        buttonElement.classList.add("is-loading");
+  // Popup Social Login Handler (Optimized for instant 1st-click response)
+  async function handleSocialLogin(provider, buttonElement) {
+    errorMessage.style.display = "none";
+    buttonElement.classList.add("is-loading");
 
-        try {
-          // Trigger popup immediately within the user gesture context
-          const result = await signInWithPopup(auth, provider);
-          window.location.replace("dashboard_home.html");
-        } catch (error) {
-          console.error("Auth Error:", error);
+    try {
+      const result = await signInWithPopup(auth, provider);
+      window.location.replace("dashboard_home.html");
+    } catch (error) {
+      console.error("Auth Error:", error);
 
-          if (error.code === 'auth/popup-blocked') {
-            errorMessage.textContent = "Pop-up blocked! Please check your browser's address bar and allow pop-ups for this site.";
-          } else if (error.code === 'auth/popup-closed-by-user') {
-            errorMessage.textContent = "Sign-in cancelled. The pop-up window was closed.";
-          } else {
-            errorMessage.textContent = "Sign-In error: " + error.message;
-          }
-          
-          errorMessage.style.display = "block";
-          buttonElement.classList.remove("is-loading");
-        }
+      if (error.code === 'auth/popup-blocked') {
+        errorMessage.textContent = "Pop-up blocked! Please check your browser's address bar and allow pop-ups for this site.";
+      } else if (error.code === 'auth/popup-closed-by-user') {
+        errorMessage.textContent = "Sign-in cancelled. The pop-up window was closed.";
+      } else {
+        errorMessage.textContent = "Sign-In error: " + error.message;
       }
+      
+      errorMessage.style.display = "block";
+      buttonElement.classList.remove("is-loading");
+    }
+  }
 
-      // Social Button Event Listeners
-      googleBtn.addEventListener("click", () => handleSocialLogin(googleProvider, googleBtn));
-      twitterBtn.addEventListener("click", () => handleSocialLogin(twitterProvider, twitterBtn));
-      githubBtn.addEventListener("click", () => handleSocialLogin(githubProvider, githubBtn));
+  // Social Button Event Listeners
+  googleBtn.addEventListener("click", () => handleSocialLogin(googleProvider, googleBtn));
+  twitterBtn.addEventListener("click", () => handleSocialLogin(twitterProvider, twitterBtn));
+  githubBtn.addEventListener("click", () => handleSocialLogin(githubProvider, githubBtn));
 
-      // Email/Password Sign-In
-      loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const email = emailInput.value.trim().toLowerCase();
-        const password = passwordInput.value;
+  // Forgot Password Click Handler
+  forgotPasswordBtn.addEventListener("click", async () => {
+    const email = emailInput.value.trim().toLowerCase();
 
-        try {
-          loginBtn.classList.add("is-loading");
-          errorMessage.style.display = "none";
-          await signInWithEmailAndPassword(auth, email, password);
-          window.location.replace("dashboard_home.html");
-        } catch (error) {
-          errorMessage.textContent = "Incorrect email or password.";
-          errorMessage.style.display = "block";
-        } finally {
-          loginBtn.classList.remove("is-loading");
-        }
-      });
-    </script>
+    if (!email) {
+      errorMessage.textContent = "Please type your email address in the email field first.";
+      errorMessage.style.display = "block";
+      return;
+    }
+
+    try {
+      forgotPasswordBtn.classList.add("is-loading");
+      errorMessage.style.display = "none";
+      
+      await sendPasswordResetEmail(auth, email);
+      
+      alert(`Password reset link sent successfully to ${email}. Check your inbox!`);
+    } catch (error) {
+      console.error("Reset Error:", error);
+      if (error.code === 'auth/user-not-found') {
+        errorMessage.textContent = "No account found with this email address.";
+      } else if (error.code === 'auth/invalid-email') {
+        errorMessage.textContent = "Please enter a valid email address.";
+      } else {
+        errorMessage.textContent = "Error: " + error.message;
+      }
+      errorMessage.style.display = "block";
+    } finally {
+      forgotPasswordBtn.classList.remove("is-loading");
+    }
+  });
+
+  // Email/Password Sign-In
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim().toLowerCase();
+    const password = passwordInput.value;
+
+    try {
+      loginBtn.classList.add("is-loading");
+      errorMessage.style.display = "none";
+      await signInWithEmailAndPassword(auth, email, password);
+      window.location.replace("dashboard_home.html");
+    } catch (error) {
+      errorMessage.textContent = "Incorrect email or password.";
+      errorMessage.style.display = "block";
+    } finally {
+      loginBtn.classList.remove("is-loading");
+    }
+  });
+</script>
   </body>
 </html>

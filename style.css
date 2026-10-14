@@ -1,20 +1,18 @@
 .navbar {
   background-color: hsl(172, 67%, 49%);
-  padding: -4cap;
+  padding: 0rem;
 }
 
 .navbar-item {
   color: #000000;
-  font-weight: 500;
-  .icon {
-    color: #2f2f36;
-  }
+  font-size: 1rem;
+  margin-right: 20px;
 }
 
 .navbar-end {
   .button {
     background-color: #fffbfb;
-    color: #4a4a4a;
+    color: #000000;
     border: 1px solid #ffffff;
   }
   .icon {
@@ -24,29 +22,16 @@
 
 .footer {
   background-color: hsl(172, 67%, 49%);
-  margin-top: 55%;
-  padding: 45px;
+  color: #000000;
+  margin-top: 700px;
+  padding: 100px;
 }
 
-.navbar-brand2 {
-  margin-right: 20%;
-  margin-bottom: 5%;
-}
-
-.column01 {
-  margin-right: 20%;
-}
-
-.column02 {
-  margin-right: 20%;
-}
-
-.column03 {
-  margin-right: 5%;
-}
-
-.field1 {
-  color: #34db0a;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.field has-addons {
+  .control {
+    .input is-small {
+      border: 1px solid #000000;
+      color: #fffdfd;
+    }
+  }
 }
