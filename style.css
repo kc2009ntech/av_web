@@ -1,37 +1,33 @@
 .navbar {
-  background-color: hsl(172, 67%, 49%);
-  padding: 0rem;
+  background-color: #00c3ffa9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-item {
-  color: #000000;
+  color: #0f0f0f;
   font-size: 1rem;
   margin-right: 20px;
 }
 
 .navbar-end {
   .button {
-    background-color: #fffbfb;
-    color: #000000;
-    border: 1px solid #ffffff;
-  }
-  .icon {
+    background-color: #00c3ffa9;
     color: #000000;
   }
 }
-
-.footer {
-  background-color: hsl(172, 67%, 49%);
+.icon {
   color: #000000;
-  margin-top: 700px;
-  padding: 100px;
 }
 
-.field has-addons {
-  .control {
-    .input is-small {
-      border: 1px solid #000000;
-      color: #fffdfd;
-    }
+.control {
+  .button {
+    background-color: #00c3ffa9;
+    color: #000000;
+    margin-right: 7px;
   }
+}
+
+.section {
+  background-color: aqua;
+  margin-top: 100px;
 }
