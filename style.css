@@ -35,3 +35,9 @@
     }
   }
 }
+
+.container {
+  background-color: #7391e4;
+  width: 90%;
+  margin-top: 50%;
+}
