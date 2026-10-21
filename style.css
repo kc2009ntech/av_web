@@ -36,8 +36,10 @@
   }
 }
 
-.container {
-  background-color: #7391e4;
-  width: 90%;
+.cont1 {
   margin-top: 50%;
+  text-align: center;
+  .img-cont {
+    padding-right: 100rem;
+  }
 }
