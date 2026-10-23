@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AeroLover - Home</title>
+
+    <!-- 1. Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+
+    <!-- 2. Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- 3. Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="button is-ghost" href="index.html">
+          <img
+            src="images/image.png"
+            alt="AeroLover Logo"
+            style="max-height: 3.8rem"
+          />
+        </a>
+
+        <!-- Mobile Burger Toggle Button -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html"><span>Home</span></a>
+          <a class="navbar-item" href="latest_news.html"
+            ><span>Latest News</span></a
+          >
+          <a class="navbar-item" href="airbus.html"><span>Airbus</span></a>
+          <a class="navbar-item" href="boeing.html"><span>Boeing</span></a>
+          <a class="navbar-item" href="airports.html"><span>Airports</span></a>
+          <a class="navbar-item" href="sustainability.html"
+            ><span>Sustainability</span></a
+          >
+          <a class="navbar-item" href="report.html"><span>Contact us</span></a>
+
+          <!-- Search Bar -->
+          <div
+            class="navbar-item"
+            style="padding-left: 0.5rem; padding-right: 0.5rem"
+          >
+            <div class="field has-addons">
+              <div class="control">
+                <input
+                  style="margin-left: 3rem"
+                  class="input is-small"
+                  type="text"
+                  id="siteSearchInput"
+                  placeholder="Search..."
+                />
+              </div>
+              <div class="control" style="margin-left: 1.9rem">
+                <button class="button is-small is-primary" id="siteSearchBtn">
+                  <span class="icon is-small">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <!-- Single Combined Account Dropdown -->
+            <div class="dropdown is-right is-hoverable">
+              <div class="dropdown-trigger">
+                <button
+                  class="button is-primary is-rounded"
+                  aria-haspopup="true"
+                  aria-controls="account-dropdown-menu"
+                >
+                  <span class="icon">
+                    <i class="fa-solid fa-user"></i>
+                  </span>
+                  <span>Account</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="account-dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="sign_in.html" class="dropdown-item">
+                    <span class="icon mr-2"
+                      ><i class="fa-solid fa-right-to-bracket"></i
+                    ></span>
+                    Log in
+                  </a>
+                  <a href="sign_up.html" class="dropdown-item">
+                    <span class="icon mr-2"
+                      ><i class="fa-solid fa-user-plus"></i
+                    ></span>
+                    Sign up
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container.is-fullhd">
+      <div class="cont1">
+        <div
+          class="notification is-primary"
+          style="background-color: cornflowerblue">
+          <p>
+            All rights reserved &copy;
+          </p>
+          <div class="img-cont">
+            <img src="images/image.png">
+     </div>
+    </div>
+
+    <h1>Contact us</h1>
+    <!-- Navbar Burger Toggle Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0,
+        );
+        $navbarBurgers.forEach((el) => {
+          el.addEventListener("click", () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle("is-active");
+            $target.classList.toggle("is-active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

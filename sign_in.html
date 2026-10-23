@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AeroLover - Sign in</title>
+
+    <!-- 1. Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+
+    <!-- 2. Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- 3. Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="button is-ghost" href="index.html">
+          <img
+            src="images/image.png"
+            alt="AeroLover Logo"
+            style="max-height: 3.8rem"
+          />
+        </a>
+
+        <!-- Mobile Burger Toggle Button -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html"><span>Home</span></a>
+          <a class="navbar-item" href="latest_news.html"
+            ><span>Latest News</span></a
+          >
+          <a class="navbar-item" href="airbus.html"><span>Airbus</span></a>
+          <a class="navbar-item" href="boeing.html"><span>Boeing</span></a>
+          <a class="navbar-item" href="airports.html"><span>Airports</span></a>
+          <a class="navbar-item" href="sustainability.html"
+            ><span>Sustainability</span></a
+          >
+          <a class="navbar-item" href="report.html"><span>Contact us</span></a>
+
+          <!-- Search Bar -->
+          <div
+            class="navbar-item"
+            style="padding-left: 0.5rem; padding-right: 0.5rem"
+          >
+            <div class="field has-addons">
+              <div class="control">
+                <input
+                  style="margin-left: 3rem"
+                  class="input is-small"
+                  type="text"
+                  id="siteSearchInput"
+                  placeholder="Search..."
+                />
+              </div>
+              <div class="control" style="margin-left: 1.9rem">
+                <button class="button is-small is-primary" id="siteSearchBtn">
+                  <span class="icon is-small">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <!-- Single Combined Account Dropdown -->
+            <div class="dropdown is-right is-hoverable">
+              <div class="dropdown-trigger">
+                <button
+                  class="button is-primary is-rounded"
+                  aria-haspopup="true"
+                  aria-controls="account-dropdown-menu"
+                >
+                  <span class="icon">
+                    <i class="fa-solid fa-user"></i>
+                  </span>
+                  <span>Account</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="account-dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="sign_in.html" class="dropdown-item">
+                    <span class="icon mr-2"
+                      ><i class="fa-solid fa-right-to-bracket"></i
+                    ></span>
+                    Log in
+                  </a>
+                  <a href="sign_up.html" class="dropdown-item">
+                    <span class="icon mr-2"
+                      ><i class="fa-solid fa-user-plus"></i
+                    ></span>
+                    Sign up
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="section">
+      <div class="container" style="max-width: 450px">
+        <div class="box">
+          <h1 class="title has-text-centered">
+            Sign In to receive updates, exclusive content and more.
+          </h1>
+
+          <!-- Regular Form -->
+          <form id="login-form">
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input
+                  id="login-email"
+                  class="input"
+                  type="email"
+                  placeholder="e.g. alex@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input
+                  id="login-password"
+                  class="input"
+                  type="password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+            </div>
+
+            <p
+              id="error-message"
+              class="has-text-danger mt-2"
+              style="display: none"
+            ></p>
+
+            <button
+              type="submit"
+              id="login-btn"
+              class="button is-primary is-fullwidth mt-4"
+              >
+              Forgot Password
+            </button>
+
+            <button
+              type="submit"
+              id="login-btn"
+              class="button is-primary is-fullwidth mt-4"
+            >
+              Log in
+            </button>
+          </form>
+
+          <!-- Divider -->
+          <div class="is-flex is-align-items-center my-4">
+            <div
+              style="flex-grow: 1; height: 1px; background-color: #dbdbdb"
+            ></div>
+            <span class="px-3 has-text-grey-light is-size-7">OR</span>
+            <div
+              style="flex-grow: 1; height: 1px; background-color: #dbdbdb"
+            ></div>
+          </div>
+
+          <!-- Google Button -->
+          <button
+            type="button"
+            id="google-btn"
+            class="button is-fullwidth is-medium is-white mb-3"
+            style="
+              border: 1px solid #dbdbdb;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+            "
+          >
+            <span class="icon" style="display: flex; align-items: center">
+              <svg width="20" height="20" viewBox="0 0 18 18">
+                <path
+                  fill="#4285F4"
+                  d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.616z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"
+                />
+              </svg>
+            </span>
+            <span style="font-weight: 500; color: #363636"
+              >Sign in with Google</span
+            >
+          </button>
+
+          <!-- Twitter Button -->
+          <button
+            type="button"
+            id="twitter-btn"
+            class="button is-fullwidth is-medium is-white mb-3"
+            style="
+              border: 1px solid #dbdbdb;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+            "
+          >
+            <span class="icon" style="color: #1da1f2">
+              <i class="fa-brands fa-twitter"></i>
+            </span>
+            <span style="font-weight: 500; color: #363636"
+              >Sign in with Twitter</span
+            >
+          </button>
+
+          <!-- GitHub Button -->
+          <button
+            type="button"
+            id="github-btn"
+            class="button is-fullwidth is-medium has-background-dark has-text-white mb-3"
+            style="
+              border: none;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+            "
+          >
+            <span class="icon" style="color: #ffffff;">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <span style="font-weight: 500; color: #ffffff">Sign in with GitHub</span>
+          </button>
+
+  <div class="footer">
+  <div class="content has-text-centered">
+      <div class="columns">
+        <div class="column01">
+          <a class="button is-ghost" href="index.html">
+            <img src="images/image.png" alt="AeroLover Logo" style="max-height: 5.8rem" />
+          </a>
+          <p>
+            
+          </p>
+        </div>
+        <div class="column02">
+            <div class="title is-5">About AeroLover</div>
+            <p>
+              AeroLover is a website dedicated to aviation enthusiasts, providing the latest news, information about aircraft manufacturers, airports, and sustainability in aviation.
+            </p>
+          </div>
+          <div class="column03">
+          <h3 class="title is-5">Contact Us</h3>
+          <p>Email: <a href="mailto:info@aerolover.com">info@aerolover.com</a></p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-half">
+          <p>
+            &copy; 2024 AeroLover. All rights reserved.
+          </p>
+        </div>
+        <div class="column is-half has-text-right">
+          <div class="title is-5" style="margin-top: 20%;">Follow Us</div>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <p>
+            <a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_of_service.html">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+      <p>
+        <strong>AeroLover</strong> by <a href="#">Your Name</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+      </p>
+      <p>
+        <a href="index.html">Home</a> | <a href="latest_news.html">Latest News</a> | <a href="airbus.html">Airbus</a> | <a href="boeing.html">Boeing</a> | <a href="airports.html">Airports</a> | <a href="sustainability.html">Sustainability</a> | <a href="report.html">Contact us</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+    <!-- Script Section -->
+    <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+    GoogleAuthProvider,
+    TwitterAuthProvider,
+    GithubAuthProvider,
+    signInWithPopup,
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyChg8nk4jHsziv9PfIKwC_kbg8UM4E4-MM",
+    authDomain: "newwebsite-7486f.firebaseapp.com",
+    projectId: "newwebsite-7486f",
+    storageBucket: "newwebsite-7486f.firebasestorage.app",
+    messagingSenderId: "477829357478",
+    appId: "1:477829357478:web:b17e366956c811991db967",
+    measurementId: "G-3J2VWZE1XJ",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  
+  const googleProvider = new GoogleAuthProvider();
+  const twitterProvider = new TwitterAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
+  const loginForm = document.getElementById("login-form");
+  const emailInput = document.getElementById("login-email");
+  const passwordInput = document.getElementById("login-password");
+  const errorMessage = document.getElementById("error-message");
+  const loginBtn = document.getElementById("login-btn");
+  const forgotPasswordBtn = document.getElementById("forgot-password-btn");
+  
+  const googleBtn = document.getElementById("google-btn");
+  const twitterBtn = document.getElementById("twitter-btn");
+  const githubBtn = document.getElementById("github-btn");
+
+  // Popup Social Login Handler (Optimized for instant 1st-click response)
+  async function handleSocialLogin(provider, buttonElement) {
+    errorMessage.style.display = "none";
+    buttonElement.classList.add("is-loading");
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      window.location.replace("dashboard_home.html");
+    } catch (error) {
+      console.error("Auth Error:", error);
+
+      if (error.code === 'auth/popup-blocked') {
+        errorMessage.textContent = "Pop-up blocked! Please check your browser's address bar and allow pop-ups for this site.";
+      } else if (error.code === 'auth/popup-closed-by-user') {
+        errorMessage.textContent = "Sign-in cancelled. The pop-up window was closed.";
+      } else {
+        errorMessage.textContent = "Sign-In error: " + error.message;
+      }
+      
+      errorMessage.style.display = "block";
+      buttonElement.classList.remove("is-loading");
+    }
+  }
+
+  // Social Button Event Listeners
+  googleBtn.addEventListener("click", () => handleSocialLogin(googleProvider, googleBtn));
+  twitterBtn.addEventListener("click", () => handleSocialLogin(twitterProvider, twitterBtn));
+  githubBtn.addEventListener("click", () => handleSocialLogin(githubProvider, githubBtn));
+
+  // Forgot Password Click Handler
+  forgotPasswordBtn.addEventListener("click", async () => {
+    const email = emailInput.value.trim().toLowerCase();
+
+    if (!email) {
+      errorMessage.textContent = "Please type your email address in the email field first.";
+      errorMessage.style.display = "block";
+      return;
+    }
+
+    try {
+      forgotPasswordBtn.classList.add("is-loading");
+      errorMessage.style.display = "none";
+      
+      await sendPasswordResetEmail(auth, email);
+      
+      alert(`Password reset link sent successfully to ${email}. Check your inbox!`);
+    } catch (error) {
+      console.error("Reset Error:", error);
+      if (error.code === 'auth/user-not-found') {
+        errorMessage.textContent = "No account found with this email address.";
+      } else if (error.code === 'auth/invalid-email') {
+        errorMessage.textContent = "Please enter a valid email address.";
+      } else {
+        errorMessage.textContent = "Error: " + error.message;
+      }
+      errorMessage.style.display = "block";
+    } finally {
+      forgotPasswordBtn.classList.remove("is-loading");
+    }
+  });
+
+  // Email/Password Sign-In
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim().toLowerCase();
+    const password = passwordInput.value;
+
+    try {
+      loginBtn.classList.add("is-loading");
+      errorMessage.style.display = "none";
+      await signInWithEmailAndPassword(auth, email, password);
+      window.location.replace("dashboard_home.html");
+    } catch (error) {
+      errorMessage.textContent = "Incorrect email or password.";
+      errorMessage.style.display = "block";
+    } finally {
+      loginBtn.classList.remove("is-loading");
+    }
+  });
+</script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #00c3ffa9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-item {
+  color: #0f0f0f;
+  font-size: 1rem;
+  margin-right: 20px;
+}
+
+.navbar-end {
+  .button {
+    background-color: #00c3ffa9;
+    color: #000000;
+  }
+}
+.icon {
+  color: #000000;
+}
+
+.control {
+  .button {
+    background-color: #00c3ffa9;
+    color: #000000;
+    margin-right: 7px;
+  }
+}
+
+.section {
+  background-color: aqua;
+  margin-top: 100px;
+}
+
+.cont1 {
+  margin-top: 50%;
+  text-align: center;
+  .img-cont {
+    padding-right: 100rem;
+  }
+}
