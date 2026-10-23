@@ -33,9 +33,14 @@
 }
 
 .cont1 {
-  margin-top: 50%;
+  margin-top: 80%;
   text-align: center;
   .img-cont {
     padding-right: 100rem;
   }
+}
+
+.breadcrumb {
+  margin-left: 30%;
+  margin-top: 10%;
 }
