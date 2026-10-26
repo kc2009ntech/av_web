@@ -16,7 +16,7 @@
   }
 }
 .icon {
-  color: #000000;
+  color: #0f0f0f;
 }
 
 .control {
@@ -33,9 +33,7 @@
 }
 
 .cont1 {
-  margin-top: 90%;
+  background-color: #e41111;
+  margin-top: 70%;
 }
 
-.icon2 {
-  text-align: end;
-}
