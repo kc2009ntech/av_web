@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AeroLover - Home</title>
 
     <!-- 1. Bulma CSS -->
@@ -69,14 +69,13 @@
             <div class="field has-addons">
               <div class="control">
                 <input
-                  style="margin-left: 3rem"
                   class="input is-small"
                   type="text"
                   id="siteSearchInput"
-                  placeholder="Search..."
+                  placeholder="Search site or URL..."
                 />
               </div>
-              <div class="control" style="margin-left: 1.9rem">
+              <div class="control">
                 <button class="button is-small is-primary" id="siteSearchBtn">
                   <span class="icon is-small">
                     <i class="fas fa-search"></i>
@@ -131,54 +130,46 @@
     <div class="container. is-fullhd">
       <div class="cont1">
         <a class="button is-ghost" href="index.html">
-          <img 
-          src="images/image.png"
-          alt="Aerolover Logo"
-          style="max-height: 6.8rem;">
-        </a>
+          <img
+            src="images/image.png"
+            alt="Aerolover Logo"
+            style="max-height: 6.8rem"
+            />
+            </a>
+            <div class="text">
+          <div class="title is-1" style="padding-left: 80%;">Follow us</div>
+            <div class="social-icons">
+              <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+              <br>
+              <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+              <br>
+            <!-- Facebook -->
+              <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+            <br>
+              <a href="https://twitter.com"><i class="fa brands x-twitter"></i></a>
+            <br>
+              <a href="https://linkedin.com"><i class="fa brands fa-linkedin"></i></a>
+          </nav>
+        </div>
         
-      </a>
-      <nav class="breadcrumb" style="margin-left: 30%;">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="latest_news.html">Latest News</a></li>
-    <li><a href="airbus.html">Airbus</a></li>
-    <li><a href="boeing.html">Boeing</a></li>
-    <li><a href="airports.html">Airports</a></li>
-    <li><a href="sustainability.html">Sustainability</a></li>
-    <li><a href="report.html">Contact us</a></li>
-  </ul>
-</nav>
-  <div class="icon2">
-  <div class="text1">
-  <h1><strong>Follow us</strong></h1>
+          <nav class="breadcrumb is-centered">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="latest_news.html">Latest News</a></li>
+            <li><a href="airbus.html">Airbus</a></li>
+            <li><a href="boeing.html">Boeing</a></li>
+            <li><a href="airports.html">Airports</a></li>
+            <li><a href="sustainability.html">Sustainability</a></li>
+            <li><a href="report.html">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+      </div>
+    </div>
   </div>
-  <div class="icon">
-<span class="icon">
-  <i class="fa-brands fa-instagram"></i>
-</span>
-
-<!-- YouTube -->
-<span class="icon">
-  <i class="fa-brands fa-youtube"></i>
-</span>
-
-<!-- Facebook -->
-<span class="icon">
-  <i class="fa-brands fa-facebook"></i>
-</span>
-
-<!-- X / Twitter -->
-<span class="icon">
-  <i class="fa-brands fa-x-twitter"></i>
-</span>
-
-<!-- LinkedIn -->
-<span class="icon">
-  <i class="fa-brands fa-linkedin"></i>
-</span>
+  <div class="container" style="text-align: center;">
+    All rights reserved &copy;
   </div>
-</div>
 
     <!-- Navbar Burger Toggle Script -->
     <script>
@@ -194,6 +185,49 @@
             el.classList.toggle("is-active");
             $target.classList.toggle("is-active");
           });
+        });
+      });
+    </script>
+
+    <!-- Internal Search / Redirect Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("siteSearchInput");
+        const searchBtn = document.getElementById("siteSearchBtn");
+
+        function handleInternalSearch() {
+          let query = searchInput.value.trim().toLowerCase();
+          if (!query) return;
+
+          // Map keywords or phrases to your local files
+          if (query.includes("news") || query.includes("latest")) {
+            window.location.href = "latest_news.html";
+          } else if (query.includes("airbus")) {
+            window.location.href = "airbus.html";
+          } else if (query.includes("boeing")) {
+            window.location.href = "boeing.html";
+          } else if (query.includes("airport")) {
+            window.location.href = "airports.html";
+          } else if (
+            query.includes("sustainability") ||
+            query.includes("green")
+          ) {
+            window.location.href = "sustainability.html";
+          } else if (query.includes("contact") || query.includes("report")) {
+            window.location.href = "report.html";
+          } else {
+            window.location.href = "404.html";
+          }
+        }
+        // Trigger on button click
+        searchBtn.addEventListener("click", handleInternalSearch);
+
+        // Trigger on "Enter" key press
+        searchInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            handleInternalSearch();
+          }
         });
       });
     </script>
